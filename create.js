@@ -2,7 +2,7 @@
 //serverless invoke local --function create --path mocks/create-event.json
 import uuid from "uuid";
 import * as dynamoDbLib from "./libs/dynamodb-lib";
-import { success, failure } from "./libs/response-lib";
+import { success, failure } from "./libs/response-libs";
 
 export async function main(event, context) {
     const data = JSON.parse(event.body);
@@ -23,4 +23,4 @@ export async function main(event, context) {
     } catch (e) {
         return failure({ status: false });
     }
-}}
+}
